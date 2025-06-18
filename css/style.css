@@ -1,0 +1,857 @@
+* {
+    box-sizing: border-box;
+}
+
+a {
+    all:unset;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+body {
+    margin : 0 auto;
+    color : #102019;
+    font-family: "Spoqa Han Sans Neo", "Sans-serif";
+}
+
+.inner {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
+    position : fixed;
+    top:0;
+    left: 0;
+    z-index: 1000;
+}
+
+.head-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.head-container .head-home {
+    font-weight: solid;
+    font-size: 1.5rem;
+}
+
+.head-menu {
+    display: flex;
+    justify-content: flex-end;
+    gap: 120px;
+    padding-right: 50px;
+}
+
+.head-container .head-company {
+    font-weight: solid;
+    font-size: 1.5rem;
+}
+
+.head-container .head-product {
+    font-weight: solid;
+    font-size: 1.5rem;
+}
+
+.head-container .head-estimate {
+    font-weight: solid;
+    font-size: 1.5rem;
+}
+
+.head-container .head-map {
+    font-weight: solid;
+    font-size: 1.5rem;
+}
+
+section {
+    width: 100%;
+    background-color: #fff;
+    position: relative;
+}
+
+.main {
+    height: 600px;
+    background-image: url("../img/white-hall.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.main-container {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(39, 62, 107, 0.5);
+    z-index: 2;
+    margin-top: 90px;
+}
+
+.title-container {
+    padding-top: 200px;
+}
+
+.title {
+    text-align: center;
+    font-size: 5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 2rem;
+}
+
+.message {
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: normal;
+    font-style: italic; word-spacing: 10px;
+    color: #fff;
+    line-height: 3rem;
+}
+
+.skill-list {
+    width: 100%;
+    height: 100%;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skill-top {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #273e6b;
+    padding: 1rem 0;
+}
+
+.skill {
+    width: 25%;
+    background-color: #fffefe;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 9px;
+    padding: 0.5rem 1rem;
+    margin: 0 1rem;
+    box-shadow: 1px 1px teal;
+}
+
+.skill-title {
+    margin-bottom: 0.7rem;
+    display: flex;
+    text-align : center;
+}
+
+.skill-icon {
+    font-size: 2rem;
+}
+
+.skill-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(26, 13, 124);
+    margin-left: 1rem;
+    align-content: center;
+}
+
+.skill-usage {
+    font-size: 0.9rem;
+    color: #273e6b;
+    margin: 0 1rem;
+    align-content: center;
+}
+
+.durability-style {
+    color: rgba(30, 169, 255, 0.669);
+}
+
+.eco-style {
+    color: rgba(27, 179, 30, 0.857);
+}
+
+.easy-style {
+    color: rgba(255, 175, 16, 0.813);
+}
+
+.various-style {
+    color: rgba(165, 21, 158, 0.6);
+}
+
+.kitchen-image {
+    width: 100%;
+    max-width: 1400px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.best-container {
+    width: 100%;
+    margin-top: 80px;
+    margin-bottom: 40px;
+}
+
+.best-title-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.best-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #273e6b;
+}
+
+.slide-prev {
+    font-size: 1.7rem;
+    cursor: pointer;
+    color: #273e6b;
+}
+
+.slide-next {
+    font-size: 1.7rem;
+    cursor: pointer;
+    color: #273e6b;
+}
+
+.slide-prev-hover:hover {
+    transition: transform 0.5s;
+    transform: translateX(-2px);
+}
+
+.slide-next-hover:hover {
+    transition: transform 0.5s;
+    transform: translateX(2px);
+}
+
+.arrow-container {
+    display: flex;
+}
+
+.class-list {
+    display: flex;
+    list-style: none;
+    padding: 0 0 1rem 0;
+    margin: 1rem 0 ;
+    overflow: none;
+}
+
+.class-card {
+    width: 300px;
+    box-shadow: 10px 10px 10px -5px rgba(0, 0, 255, 0.2);
+    border-radius: 8px;
+    margin: 0 10px;
+    flex-shrink: 0;
+    transition: 0.3s;
+}
+
+.class-card:hover {
+    cursor: pointer;
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 255, 0.2);
+    transform: translate(0, -2px);
+}
+
+.class-image {
+    width: 100%;
+    height: 250px;
+    border-radius: 8px 8px 0 0;
+}
+
+.class-container {
+    width: 100%;
+    padding: 0.5rem 1rem;
+}
+
+.class-title {
+    font-size: 0.9rem;
+}
+
+.class-name {
+    font-size: 0.9rem;
+    padding: 0.2rem;
+    margin-top: 0.2rem;
+}
+
+footer {
+    border-top: 1px solid #e4e4e4;
+    background-color: #fff;
+    padding-top: 1rem;
+}
+
+.footer-contact{
+    font-size: 1rem;
+    font-weight: bold;
+    color: #42425d;
+    margin-bottom: 0.5rem;
+    margin-top: 50px;
+}
+
+.footer-info {
+    font-size: 0.9rem;
+    color: #42425d;
+    margin-bottom: 0.3rem;
+}
+
+.footer-copyright{
+    font-size: 0.9rem;
+    color: #42425d;
+}
+
+#backtotop {
+    background-color: #273e6b;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+
+    border-radius: 20px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition-property: background-color, opacity, visibility;
+    transition-duration: 0.3s, 0.5s, 0.5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999;
+}
+
+#backtotop::after {
+    content: "\f102";
+    font-family: FontAwesome;
+    font-size: 1.5rem;
+    line-height: 40px;
+    color: #fff;
+}
+
+#backtotop.show:hover {
+    cursor: pointer;
+    background-color: #157be0;
+}
+
+#backtotop.show {
+    opacity: 1;
+    visibility: visible;
+    background-color: #273e6b;
+}
+
+.introduce {
+    background-image: url("../img/kitchen.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+    font-size: 1rem;
+    color: #fff;
+    margin-top: 60px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 6rem;
+}
+
+.circle-list {
+    position: relative;
+    width: 300PX;
+    height: 400PX;
+    margin: 1rem auto;
+}
+
+.circle {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    opacity: 0.7;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.circle-title {
+    margin-bottom: 0.7rem;
+    display: flex;
+    text-align : center;
+}
+
+.circle-icon {
+    font-size: 2rem;
+}
+
+
+.c1 {
+    background-color: #6cb1ffbf;
+    top: 180px;
+    right: 120px;
+    z-index: 1;
+}
+
+.c2 {
+    background-color: #f0f280;
+    top: -10px;
+    left: 40px;
+    z-index: 2;
+}
+
+.c3 {
+    background-color: #62f13bbd;
+    top: 180px;
+    left: 145px;
+    z-index: 3;
+}
+
+.satisfied-style {
+    color: rgb(255, 255, 255);
+}
+
+.trust-style {
+    color: rgb(81, 202, 94);
+}
+
+.responsibility-style {
+    color: rgb(255, 217, 64);
+}
+
+.circle-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(26, 13, 124);
+    margin-left: 1rem;
+    align-content: center;
+}
+
+.circle-usage {
+    font-size: 0.9rem;
+    color: #273e6b;
+    margin: 0 1rem;
+    align-content: center;
+}
+
+.img-container {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    margin-top: 4rem;
+    padding: 0 2rem;
+    overflow: hidden;
+}
+
+.factory-image {
+    width: 50%;
+    object-fit: cover;
+}
+
+.factory2-image {
+    width: 50%;
+    object-fit: cover;
+}
+
+.product-main {
+    margin-top: 90px;
+    margin-bottom: 2rem;
+}
+
+.main-image {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: block;
+    justify-content: center;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 28%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    font-style: italic;
+}
+
+.product-section {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    padding: 0 1rem;
+}
+
+.product-type {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #102019;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.5rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.product-item {
+  text-align: center;
+}
+
+.product-item:hover {
+  cursor: pointer;
+  
+}
+
+.product-item:hover img {
+  box-shadow: 10px 10px 10px 0px rgba(0, 0, 76, 0.2);
+  transform: translate(0, -2px);
+  transition: transform 0.3s ease;
+}
+
+.product-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-name {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+body.form-page {
+  background: url('../img/form.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* 기본 폼 스타일 */
+.estimate-form {
+  max-width: 600px;
+  margin: 150px auto 80px auto;           /* 위아래 여백 추가 */
+  padding: 40px;               /* 폼 내부 여백 */
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+}
+
+/* 제목 */
+.estimate-form h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.required-star {
+  color: red;
+  margin-left: 4px;
+}
+
+/* 라벨과 입력 필드 사이 간격 */
+.estimate-form label {
+  display: block;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* 입력 필드 스타일 */
+.estimate-form input,
+.estimate-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* 설명 텍스트 (hint) */
+.estimate-form .hint {
+  margin-top: 5px;
+  margin-bottom: 30px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* 버튼 그룹 */
+.estimate-form .button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+/* 버튼 스타일 */
+.estimate-form button,
+.estimate-form a.kakao-btn {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.estimate-form button.email-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.estimate-form a.kakao-btn {
+  background-color: #ffe812;
+  color: #3b1e1e;
+  text-align: center;
+}
+
+/* 전송 상태 메시지 */
+.status-message {
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.status-message.success {
+  color: green;
+}
+
+.status-message.error {
+  color: red;
+}
+
+
+#map-page .wrapper {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.store1-image {
+    width: 100%;
+    height: 600px;
+    margin: 0 1rem 1rem 1rem;
+}
+
+.store2-image {
+    width: 100%;
+    height: 600px;
+    margin: 0 1rem 1rem 1rem;
+}
+
+#map-page .map-container iframe {
+    width: 100%;
+    height: 100%;
+}
+
+#map-page .map-and-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    margin: 0 1rem 2rem 1rem;
+    height: 400px;
+}
+
+#map-page .map-container {
+  width: 100%;
+  height: 100%;
+}
+
+#map-page .side-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+}
+
+#map-page .map-info {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 230px;
+    height: 230px;
+    background-color: #fff9e6;
+    border-radius: 50%;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 1.4;
+
+    z-index: 10;
+}
+
+#map-page .map-info h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #27306b;
+}
+
+#map-page .map-info address {
+    font-size: 0.9rem;
+    font-style: normal;
+    color: #27306b;
+}
+
+.product-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 10px;
+}
+
+.product-main-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 100px;
+  margin-bottom: 80px;
+}
+
+.product-description {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.product-description p {
+  margin: 8px 0;
+}
+
+.interior-images {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+}
+
+.interior-images img {
+  width: 49%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 100px;
+}
+
+.more-products {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.browse-button {
+  display: inline-block;
+  margin: 10px 40px;
+  padding: 12px 20px;
+  background-color: #293651;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.browse-button:hover {
+  background-color: #fee993;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; /* 헤더 높이 */
+  background-color: white;
+  color: black;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  z-index: 1000;
+  pointer-events: auto;
+}
+
+#main-header.hide {
+  opacity: 0;
+  pointer-events: auto; /* 여전히 마우스 감지 가능하게 유지 */
+}
+
+#main-header.scrolled {
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#all-products, #best-products {
+  scroll-margin-top: 100px; /* 헤더 높이만큼 조절 */
+}
+
+@media only screen and (min-width: 1200px) {
+    .inner {
+        max-width: 1200px;
+    }
+}
+
+@media only screen and (max-width: 980px) {
+    .skill-container {
+        display: none;
+    }
+}
+
+/* 반응형 대응 */
+@media (max-width: 600px) {
+  .estimate-form {
+    margin: 40px 20px; /* 좌우 여백 줄이기 */
+    padding: 24px;     /* 내부 여백 줄이기 */
+  }
+
+  .estimate-form h2 {
+    font-size: 20px;
+  }
+
+  .estimate-form input,
+  .estimate-form textarea {
+    font-size: 15px;
+  }
+
+  .estimate-form .button-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .estimate-form button,
+  .estimate-form a.kakao-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
