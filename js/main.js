@@ -303,15 +303,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-/* ---------------------------------------------------------------*/
 
-document.addEventListener('DOMContentLoaded', () => {
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
 
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', () => {
-      mobileMenu.classList.toggle('show');
-    });
-  }
-});
+// 헤더를 불러온 후에 햄버거 이벤트 등록
+fetch("C-header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("main-header").innerHTML = data;
+
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', () => {
+        mobileMenu.classList.toggle('show');
+      });
+    }
+  });
