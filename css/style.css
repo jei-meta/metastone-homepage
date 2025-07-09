@@ -1057,34 +1057,25 @@ html {
 }
 
 /* 반응형 대응 */
-@media (max-width: 600px) {
-  .estimate-form {
-    margin: 40px 20px; /* 좌우 여백 줄이기 */
-    padding: 24px;     /* 내부 여백 줄이기 */
+
+@media (max-width: 768px) {
+  body {
+    transform: scale(0.95);
+    transform-origin: top center;
   }
 
-  .estimate-form h2 {
-    font-size: 20px;
+  .inner,
+  .main-container,
+  .hero-section,
+  .product-section,
+  .product-detail,
+  .estimate-form,
+  .introduce,
+  .info-container {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
-  .estimate-form input,
-  .estimate-form textarea {
-    font-size: 15px;
-  }
-
-  .estimate-form .button-group {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .estimate-form button,
-  .estimate-form a.kakao-btn {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-@media (max-width: 600px) {
   .head-menu {
     display: none;
   }
@@ -1146,5 +1137,30 @@ html {
 
   #recent-products {
     display: none;
+  }
+
+  .estimate-form {
+    margin: 40px 20px;
+    padding: 24px;
+  }
+
+  .estimate-form h2 {
+    font-size: 20px;
+  }
+
+  .estimate-form input,
+  .estimate-form textarea {
+    font-size: 15px;
+  }
+
+  .estimate-form .button-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .estimate-form button,
+  .estimate-form a.kakao-btn {
+    width: 100%;
+    text-align: center;
   }
 }
