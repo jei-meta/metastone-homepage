@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Meta Stone- 대리석설치</title>
+    <meta name="description" content="주식회사 메타스톤 홈페이지" />
+    <meta name="keywords" content="엔지니어드스톤, 칸스톤, 주방상판, 아트월, 대리석, 욕실, 바닥" />
+    <meta name="author" content="jei" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />    
+
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/nomalize.css"/>
+    <script src="https://kit.fontawesome.com/5d831dec6d.js" crossorigin="anonymous"></script>
+    <link href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSanNeo.css" rel="stylesheet" type="text/css" >
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="form-page">
+
+    <header id="main-header"></header>
+    <script>
+    fetch("C-header.html")
+        .then(res => res.text())
+        .then(data => {
+        document.getElementById("main-header").innerHTML = data;
+        });
+    </script>
+
+    <section id="estimate-form" class="estimate-form">
+        <h2>📋 견적 문의</h2>
+  
+        <form action="https://formspree.io/f/mnnvrgjl" method="POST" id="form">
+            <label for="name">업체명 (이름) <span class="required-star">*</span></label>
+            <input type="text" id="name" name="name" required>
+            <p class="hint">상호명 또는 담당자 성함을 입력해 주세요.</p>
+
+            <label for="contact">연락처 <span class="required-star">*</span></label>
+            <input type="text" id="contact" name="contact" required>
+            <p class="hint">휴대폰 번호 또는 유선번호를 입력해 주세요.</p>
+
+            <label for="address">현장 주소 <span class="required-star">*</span></label>
+            <input type="text" id="address" name="address" required>
+            <p class="hint">시공이 이루어질 현장의 주소를 입력해 주세요.</p>
+
+            <label for="material">자재명 <span class="required-star">*</span></label>
+            <input type="text" id="material" name="material" required>
+            <p class="hint">예: 칼라카타 피오레 20T , 어베인 미스트 12T 등 자재명을 정확히 입력해 주세요.</p>
+
+            <label for="item">문의 품목 <span class="required-star">*</span></label>
+            <input type="text" id="item" name="item" required>
+            <p class="hint">예: 주방 상판, 아트월, 바닥 등</p>
+
+            <label for="message">기타 요청사항</label>
+            <textarea id="message" name="message" rows="5"></textarea>
+
+            <div class="button-group">
+            <button type="submit" class="email-btn" >✉️ 이메일 보내기</button>
+            <a href="https://pf.kakao.com/_NxnxkFn/chat" class="kakao-btn" target="_blank">💬 카카오톡 문의하기</a>
+            </div>
+
+            <div class="emergency-contact">
+                <p>📞 긴급 문의는 <a href="tel:01096865903">010-9686-5903</a> 로 전화주세요.</p>
+            </div>
+
+            <p id="status-message" class="status-message"></p>
+
+        </form>
+    </section>
+
+    <div id="footer"></div>
+    <script>
+    fetch("C-footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+      });
+    </script>
+    
+    <a id="backtotop"></a>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

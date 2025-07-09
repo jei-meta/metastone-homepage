@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Meta Stone- 대리석설치</title>
+    <meta name="description" content="주식회사 메타스톤 홈페이지" />
+    <meta name="keywords" content="엔지니어드스톤, 칸스톤, 주방상판, 아트월, 대리석, 욕실, 바닥" />
+    <meta name="author" content="jei" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />    
+
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/nomalize.css"/>
+    <script src="https://kit.fontawesome.com/5d831dec6d.js" crossorigin="anonymous"></script>
+    <link href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSanNeo.css" rel="stylesheet" type="text/css" >
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header id="main-header"></header>
+    <script>
+    fetch("C-header.html")
+        .then(res => res.text())
+        .then(data => {
+        document.getElementById("main-header").innerHTML = data;
+        });
+    </script>
+    
+    <main class="product-detail">
+
+        <section class="product-main-image">
+            <img src="img/c/mist-sheet.webp" alt="어베인미스트 원장 이미지" />
+        </section>
+
+        <section class="product-description">
+            <p>어베인 미스트 Urbanemist</p>
+            <p>12T, &nbsp;20T</p>
+            <p>차분한 화이트 그레이 톤에 미세한 패턴이 더해져, 어느 공간에나 자연스럽게 어우러지는 엔지니어드 스톤. <br>
+                세련되고 밝은 인테리어를 원하는 분께 추천드립니다.</p>
+        </section>
+
+        <section class="interior-examples">
+            <div class="interior-images">
+                <img src="img/c/mist-1.png" alt="어베인미스트 적용 예시 1" />
+                <img src="img/c/mist-2.png" alt="어베인미스트 적용 예시 2" />
+            </div>
+            <div class="example">* 연출된 이미지 및 시공사례입니다. </div>
+
+            <div class="more-products">
+                <a href="H-product.html#all-products" class="browse-button">☜  모든 제품 보러가기</a>
+                <a href="H-estimate.html" class="browse-button">견적문의 하러가기  ☞</a>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+    <script>
+    fetch("C-footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+      });
+    </script>
+    
+    <a id="backtotop"></a>
+    <script src="js/main.js"></script>
+</body>
+</html>

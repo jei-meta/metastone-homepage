@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Meta Stone- 대리석설치</title>
+    <meta name="description" content="주식회사 메타스톤 홈페이지" />
+    <meta name="keywords" content="엔지니어드스톤, 칸스톤, 주방상판, 아트월, 대리석, 욕실, 바닥" />
+    <meta name="author" content="jei" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />    
+
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/nomalize.css"/>
+    <script src="https://kit.fontawesome.com/5d831dec6d.js" crossorigin="anonymous"></script>
+    <link href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSanNeo.css" rel="stylesheet" type="text/css" >
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header id="main-header"></header>
+    <script>
+    fetch("C-header.html")
+        .then(res => res.text())
+        .then(data => {
+        document.getElementById("main-header").innerHTML = data;
+        });
+    </script>
+
+    <section class="product-main">
+        <img src="img/wall.jpg" alt="거실아트월" class="main-image">
+        <div class="overlay-text">Engineered &nbsp;Stone</div>
+        <div class="overlay-text2">엔지니어드 스톤은 90% 이상의 천연 석영으로 이루어진 프리미엄 인조석입니다. 
+            자연에서 채취한 석영 본연의 질감과 색감 위에 정밀한 기술력으로 베인(결 무늬)을 더해, 고급스러운 분위기를 완성합니다.<br><br>
+
+            하지만 자연 그대로의 소재이기에, 제품마다 색감과 무늬가 조금씩 다르게 표현됩니다. 
+            화면 속 이미지와는 다소 차이가 있을 수 있지만, 바로 그 차이가 세상에 단 하나뿐인 당신만의 디자인을 완성해줍니다.<br><br>
+
+            매끄러운 표면, 섬세한 광택, 독특한 무늬.<br>
+            그 어떤 복제품도 흉내 낼 수 없는 자연의 흔적을 담은 엔지니어드 스톤은, 
+            시공되는 순간부터 당신의 공간을 더 특별하게 만들어줍니다.</div> 
+    </section>
+    
+    <section id="all-products" class="product-section">
+        <h2 class="product-type">스탠다드</h2>
+        <div class="product-grid-standard">
+            <div class="product-item">
+                <a href="E-b1black.html" onclick="saveRecentProduct('스텔라', 'E-b1black.html', 'img/b/b1.jpg')">
+                    <img src="img/b/b1.jpg" alt="스텔라">
+                    <div class="product-name">스텔라</div>
+                </a>
+            </div>
+            <div class="product-item">
+                <a href="E-b3white.html" onclick="saveRecentProduct('아레나 화이트', 'E-b3white.html', 'img/b/b3.jpg')">
+                    <img src="img/b/b3.jpg" alt="아레나화이트">
+                    <div class="product-name">아레나 화이트</div>
+                </a>
+            </div>
+            <div class="product-item">
+                <a href="E-b5gray.html" onclick="saveRecentProduct('아레나 그레이', 'E-b5gray.html', 'img/b/b5.jpg')">
+                    <img src="img/b/b5.jpg" alt="아레나그레이">
+                    <div class="product-name">아레나 그레이</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-section">
+        <h2 class="product-type">프리미엄</h2>
+        <div class="product-grid-premium">
+            <div class="product-item">
+                <a href="E-h1sabbia.html" onclick="saveRecentProduct('클라세 사비아', 'E-h1sabbia.html', 'img/h/h1.jpg')">
+                    <img src="img/h/h1.jpg" alt="클라세사비아">
+                    <div class="product-name">클라세 사비아</div>
+                </a>
+            </div>
+            <div class="product-item">
+                <a href="E-h2sand.html" onclick="saveRecentProduct('아테네 샌드', 'E-h2sand.html', 'img/h/h2.jpg')">
+                    <img src="img/h/h2.jpg" alt="아테네샌드">
+                    <div class="product-name">아테네 샌드</div>
+                </a>
+            </div>
+            <div class="product-item">
+                <a href="E-h3brown.html" onclick="saveRecentProduct('테라 브라운', 'E-h3brown.html', 'img/h/h3.jpg')">
+                    <img src="img/h/h3.jpg" alt="테라브라운">
+                    <div class="product-name">테라 브라운</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-section">
+        <h2 class="product-type">프레스티지</h2>
+        <div class="product-grid-prestige">
+            <div class="product-item">
+                <a href="E-saturn.html" onclick="saveRecentProduct('새턴', 'E-saturn.html', 'img/p/saturn.png')">
+                    <img src="img/p/saturn.png" alt="새턴">
+                    <div class="product-name">새턴</div>
+                </a>
+            </div>
+            <div class="product-item">
+                <a href="E-mercury.html" onclick="saveRecentProduct('머큐리', 'E-mercury.html', 'img/p/mercury.png')">
+                    <img src="img/p/mercury.png" alt="머큐리">
+                    <div class="product-name">머큐리</div>
+                </a>
+            </div>
+            <div class="product-item">
+                <a href="E-mars.html" onclick="saveRecentProduct('마스', 'E-mars.html', 'img/p/mars.png')">
+                    <img src="img/p/mars.png" alt="마스">
+                    <div class="product-name">마스</div>
+                </a>
+            </div>
+            <div class="product-item">
+                <a href="E-universe.html" onclick="saveRecentProduct('유니버스', 'E-universe.html', 'img/p/universe.png')">
+                    <img src="img/p/universe.png" alt="유니버스">
+                    <div class="product-name">유니버스</div>
+                </a>
+            </div>
+            <div class="product-item">
+                <a href="E-jupiter.html" onclick="saveRecentProduct('주피터', 'E-jupiter.html', 'img/p/jupiter.png')">
+                    <img src="img/p/jupiter.png" alt="주피터">
+                    <div class="product-name">주피터</div>
+                </a>
+            </div>
+            <div class="product-item">
+                <a href="E-casares.html" onclick="saveRecentProduct('카사레스', 'E-casares.html', 'img/h/casares.png')">
+                    <img src="img/h/casares.png" alt="카사레스">
+                    <div class="product-name">카사레스</div>
+                </a>
+            </div>
+            <div class="product-item">
+                <a href="E-seawave.html" onclick="saveRecentProduct('씨웨이브', 'E-seawave.html', 'img/h/h5.jpg')">
+                <img src="img/h/h5.jpg" alt="씨웨이브">
+                <div class="product-name">씨웨이브</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-section">
+        <h2 class="product-type">하이엔드 카라라</h2>
+        <div class="product-grid-carara">
+            <div class="product-item">
+                <a href="E-urbanemist.html" onclick="saveRecentProduct('어베인 미스트', 'E-urbanemist.html', 'img/c/mist.png')">
+                    <img src="img/c/mist.png" alt="어베인미스트">
+                    <div class="product-name">어베인 미스트</div>
+                    <div class="badge-best">BEST</div>
+                </a>
+            </div>
+            <div class="product-item">
+                <a href="E-urbanecharcoal.html" onclick="saveRecentProduct('어베인 차콜', 'E-urbanecharcoal.html', 'img/c/charcoal.png')">
+                    <img src="img/c/charcoal.png" alt="어베인차콜">
+                    <div class="product-name">어베인 차콜</div>
+                    <div class="badge-best">BEST</div>
+                </a>
+            </div>
+            <div class="product-item">
+                <a href="E-darknight.html" onclick="saveRecentProduct('다크 나이트', 'E-darknight.html', 'img/c/night.png')">
+                    <img src="img/c/night.png" alt="다크나이트">
+                    <div class="product-name">다크 나이트</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-section">
+        <h2 class="product-type">하이엔드 칼라카타</h2>
+        <div class="product-grid-calacatta">
+            <div class="product-item">
+                <a href="E-piccolo.html" onclick="saveRecentProduct('칼라카타 피콜로', 'E-piccolo.html', 'img/c/piccolo.jpg')">
+                    <img src="img/c/piccolo.jpg" alt="피콜로">
+                    <div class="product-name">칼라카타 피콜로</div>
+                    <div class="badge-best">BEST</div>
+                </a>
+            </div>
+            <div class="product-item">
+                <a href="E-mezo.html" onclick="saveRecentProduct('칼라카타 메조', 'E-mezo.html', 'img/c/mezo.jpg')">
+                    <img src="img/c/mezo.jpg" alt="메조">
+                    <div class="product-name">칼라카타 메조</div>
+                    <div class="badge-best">BEST</div>
+                </a>
+            </div>
+            <div class="product-item">
+                <a href="E-fiore.html" onclick="saveRecentProduct('칼라카타 피오레', 'E-fiore.html', 'img/c/fiore.jpg')">
+                    <img src="img/c/fiore.jpg" alt="피오레">
+                    <div class="product-name">칼라카타 피오레</div>
+                    <div class="badge-best">BEST</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="more-products">
+        <a href="H-index.html" class="browse-button">홈으로</a>
+    </div>
+    
+    <div id="footer"></div>
+    <script>
+    fetch("C-footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+      });
+    </script>
+
+    <a id="backtotop"></a>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

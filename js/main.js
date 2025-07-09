@@ -168,8 +168,9 @@ header.addEventListener("mouseleave", () => {
 /* ---------------------------------------------------------------*/
 
 const form = document.getElementById("form");
-  const statusMessage = document.getElementById("status-message");
+const statusMessage = document.getElementById("status-message");
 
+if (form && statusMessage) {
   form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
@@ -183,11 +184,132 @@ const form = document.getElementById("form");
     });
 
     if (response.ok) {
-      statusMessage.innerText = "✅ 정상적으로 전송되었습니다. 담당자 확인후 순차적으로 연락드릴 예정입니다. 감사합니다! :)";
+      statusMessage.innerText = "✅ 정상적으로 전송되었습니다.";
       statusMessage.classList.add("success");
       form.reset();
     } else {
-      statusMessage.innerText = "❌ 오류가 발생했습니다. 다시 시도해 주세요.";
+      statusMessage.innerText = "❌ 오류가 발생했습니다.";
       statusMessage.classList.add("error");
     }
   });
+}
+
+/* ---------------------------------------------------------------*/
+
+// 최근 본 제품 저장
+function saveRecentProduct(name, url, imageUrl) {
+  let recent = JSON.parse(sessionStorage.getItem('recentProducts')) || [];
+
+  // 동일 제품 중복 제거
+  recent = recent.filter(p => p.name !== name);
+
+  // 새 제품 맨 앞에 추가
+  recent.unshift({ name, url, imageUrl });
+
+  // 최대 5개까지 저장
+  if (recent.length > 5) recent = recent.slice(0, 5);
+
+  sessionStorage.setItem('recentProducts', JSON.stringify(recent));
+
+  // 박스 보이게 하기
+  const box = document.getElementById('recent-products');
+  const toggleBtn = document.getElementById('recent-toggle');
+  if (box) box.style.display = '';
+  if (toggleBtn) toggleBtn.style.display = '';
+
+  // 최근 제품 목록 새로고침
+  showRecentProducts();
+
+  // 접힘 상태 적용 (토글버튼과 동일하게)
+  const isCollapsed = localStorage.getItem('recentCollapsed') === 'true';
+  if (isCollapsed && box) {
+    box.classList.add('collapsed');
+  } else if (box) {
+    box.classList.remove('collapsed');
+  }
+}
+
+// 최근 본 제품 목록 표시
+function showRecentProducts() {
+  const list = document.getElementById('recent-list');
+  if (!list) return;
+
+  const recent = JSON.parse(sessionStorage.getItem('recentProducts')) || [];
+  list.innerHTML = '';
+
+  recent.forEach(p => {
+    const a = document.createElement('a');
+    a.href = p.url;
+    a.className = 'recent-item';
+
+    const img = document.createElement('img');
+    img.src = p.imageUrl;
+    img.alt = p.name;
+    img.className = 'recent-thumb';
+
+    const span = document.createElement('span');
+    span.textContent = p.name;
+
+    a.appendChild(img);
+    a.appendChild(span);
+    list.appendChild(a);
+  });
+}
+
+// recent.html 불러온 후 실행
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.createElement('div');
+  container.id = 'recent-container';
+  document.body.appendChild(container);
+
+  fetch('C-recent.html')
+    .then(res => res.text())
+    .then(html => {
+      container.innerHTML = html;
+
+      const box = document.getElementById('recent-products');
+      const toggleBtn = document.getElementById('recent-toggle');
+      const recent = JSON.parse(sessionStorage.getItem('recentProducts')) || [];
+
+      if (recent.length === 0) {
+        // 최근 제품 없으면 박스와 토글 버튼 숨기기
+        if (box) box.style.display = 'none';
+        if (toggleBtn) toggleBtn.style.display = 'none';
+      } else {
+        // 제품 있으면 보이기 + 목록 표시
+        if (box) box.style.display = '';
+        if (toggleBtn) toggleBtn.style.display = '';
+
+        showRecentProducts();
+
+        // 저장된 접힘 상태 확인
+        const isCollapsed = localStorage.getItem('recentCollapsed') === 'true';
+        if (isCollapsed) {
+          box.classList.add('collapsed');
+          toggleBtn.textContent = '＜';
+        } else {
+          box.classList.remove('collapsed');
+          toggleBtn.textContent = '＞';
+        }
+
+        // 버튼 클릭 시 상태 저장
+        toggleBtn.addEventListener('click', () => {
+          box.classList.toggle('collapsed');
+          const collapsed = box.classList.contains('collapsed');
+          toggleBtn.textContent = collapsed ? '＜' : '＞';
+          localStorage.setItem('recentCollapsed', collapsed); // 상태 저장
+        });
+      }
+    });
+});
+
+/* ---------------------------------------------------------------*/
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('show');
+  });
+</script>

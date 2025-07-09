@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Meta Stone- 대리석설치</title>
+    <meta name="description" content="주식회사 메타스톤 홈페이지" />
+    <meta name="keywords" content="엔지니어드스톤, 칸스톤, 주방상판, 아트월, 대리석, 욕실, 바닥" />
+    <meta name="author" content="jei" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />    
+
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/nomalize.css"/>
+    <script src="https://kit.fontawesome.com/5d831dec6d.js" crossorigin="anonymous"></script>
+    <link href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSanNeo.css" rel="stylesheet" type="text/css" >
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <header id="main-header"></header>
+    <script>
+    fetch("C-header.html")
+        .then(res => res.text())
+        .then(data => {
+        document.getElementById("main-header").innerHTML = data;
+        });
+    </script>
+
+    <section class="main">
+        <img src="img/main.jpg" alt="배경" class="main-bg">
+        <div class="main-container">
+                <div class="title-container">
+                    <div class="title">엔지니어드스톤 전문 업체</div>
+                    <div class="message">#대리석 #주방 #욕실 #바닥 #아트월 #가구</div>
+                </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="inner">
+            <div class="best-container">
+                <div class="best-title-container">
+                    <div id="best-products" class="best-title">베스트 상품</div>
+                    <div class="badge-best list">BEST</div>
+                    <div class="arrow-container">
+                        <i class="fa-solid fa-square-caret-left slide-prev"></i>
+                        <i class="fa-solid fa-square-caret-right slide-next"></i>
+                    </div>
+                </div>
+                <ul class="class-list">
+                    <li class="class-card">
+                        <a href="E-fiore.html" onclick="saveRecentProduct('칼라카타 피오레', 'E-fiore.html', 'img/c/fiore.jpg')">
+                            <img src="img/c/fiore.jpg" alt="칼라카타 피오레" class="class-image"/>
+                            <div class="class-container">
+                                <div class="class-title">[하이엔드 칼라카타]</div>
+                                <div class="class-name">칼라카타 피오레/12T/20T</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="class-card">
+                        <a href="E-piccolo.html" onclick="saveRecentProduct('칼라카타 피콜로', 'E-piccolo.html', 'img/c/piccolo.jpg')">
+                            <img src="img/c/piccolo.jpg" alt="칼라카타 피콜로" class="class-image"/>
+                            <div class="class-container">
+                                <div class="class-title">[하이엔드 칼라카타]</div>
+                                <div class="class-name">칼라카타 피콜로/12T/20T</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="class-card">
+                        <a href="E-mezo.html" onclick="saveRecentProduct('칼라카타 메조', 'E-mezo.html', 'img/c/mezo.jpg')">
+                            <img src="img/c/mezo.jpg" alt="칼라카타 메조" class="class-image"/>
+                            <div class="class-container">
+                                <div class="class-title">[하이엔드 칼라카타]</div>
+                                <div class="class-name">칼라카타 메조/12T/20T</div>
+                        </div>
+                        </a>
+                    </li>
+                    <li class="class-card">
+                        <a href="E-urbanemist.html" onclick="saveRecentProduct('어베인 미스트', 'E-urbanemist.html', 'img/c/mist.png')">
+                            <img src="img/c/mist-best.png" alt="어베인 미스트" class="class-image"/>
+                            <div class="class-container">
+                                <div class="class-title">[하이엔드 카라라]</div>
+                                <div class="class-name">어베인 미스트/12T/20T</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="class-card">
+                        <a href="E-urbanecharcoal.html" onclick="saveRecentProduct('어베인 차콜', 'E-urbanecharcoal.html', 'img/c/charcoal.png')">
+                            <img src="img/c/charcoal-best.png" alt="어베인 차콜" class="class-image"/>
+                            <div class="class-container">
+                                <div class="class-title">[하이엔드 카라라]</div>
+                                <div class="class-name">어베인 차콜/12T/20T</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section class="hero-section">
+        <img src="img/bath/bathroom.png" alt="배경이미지" class="hero-image">
+        <div class="hero-text"> 공간을 디자인하다, 스톤으로 완성하다.</div>
+    </section>
+
+    <section class="info-section">
+        <div class="info-container">
+            <div class="info-image">
+                <img src="img/floor/floor1.jpg" alt="엔지니어드스톤 1" />
+            </div>
+            <div class="info-text">
+                <h2>엔지니어드스톤이란?</h2>
+                <p>Engineered Stone은 90% 이상 천연 석영(Quartz)으로 구성된<br>
+                    고강도 인공석입니다. 고급스러운 외관을 오래 유지할 수 있어 <br>
+                    프리미엄 주방이나 욕실에 적합합니다.</p>
+            </div>
+        </div>
+
+        <div class="info-container">
+            <div class="info-image">
+                <img src="img/kitchen/kitchen1.jpg" alt="엔지니어드스톤 2" />
+            </div>
+                <div class="info-text">
+                <h2>왜 엔지니어드 스톤을 선택해야 할까?</h2>
+            <p>천연석보다 강하고, 인조대리석보다 고급스럽습니다.<br>
+               스크래치, 오염, 열에 강해 오래도록 처음 그대로의 아름다움을 유지합니다.</p>
+            </div>
+        </div>
+
+        <div class="info-container">
+            <div class="info-image">
+                <img src="img/floor/floor2.jpg" alt="엔지니어드스톤 3" />
+            </div>
+            <div class="info-text">
+                <h2>자연의 질감을 그대로</h2>
+                <p>천연석 느낌을 주는 고급스러운 외관을 구현합니다.</p>
+            </div>
+        </div>
+
+        <div class="info-container">
+            <div class="info-image">
+                <img src="img/bath/bath1.jpg" alt="엔지니어드스톤 4" />
+            </div>
+            <div class="info-text">
+                <h2>다양한 시공 가능</h2>
+                <p>주방 상판, 욕실벽면, 바닥 등 어디든 어울립니다.<br>
+                    균일한 패턴과 고급스러운 무늬, 다양한 색상 덕분에 인테리어에 유리합니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+    <script>
+    fetch("C-footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+      });
+    </script>
+
+    <a id="backtotop"></a>
+    <script src="js/main.js"></script>
+</body>
+</html>

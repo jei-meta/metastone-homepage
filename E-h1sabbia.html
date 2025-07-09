@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Meta Stone- 대리석설치</title>
+    <meta name="description" content="주식회사 메타스톤 홈페이지" />
+    <meta name="keywords" content="엔지니어드스톤, 칸스톤, 주방상판, 아트월, 대리석, 욕실, 바닥" />
+    <meta name="author" content="jei" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />    
+
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/nomalize.css"/>
+    <script src="https://kit.fontawesome.com/5d831dec6d.js" crossorigin="anonymous"></script>
+    <link href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSanNeo.css" rel="stylesheet" type="text/css" >
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header id="main-header"></header>
+    <script>
+    fetch("C-header.html")
+        .then(res => res.text())
+        .then(data => {
+        document.getElementById("main-header").innerHTML = data;
+        });
+    </script>
+    
+    <main class="product-detail">
+
+        <section class="product-main-image">
+            <img src="img/h/h1-sheet.jpg" alt="클라세사비아 원장 이미지" />
+        </section>
+
+        <section class="product-description">
+            <p>클라세 사비아</p>
+            <p>12T, &nbsp;20T</p>
+            <p>모래를 닮은 내추럴베이지 바탕에 잔잔한 블랙,그레이의 조화. 따뜻하고 감각적인 공간에 잘 어울립니다.</p>
+        </section>
+
+        <section class="interior-examples">
+            <div class="interior-images">
+                <img src="img/h/h1-1.png" alt="클라세사비아 적용 예시 1" />
+                <img src="img/h/h1-2.png" alt="클라세사비아 적용 예시 2" />
+            </div>
+            <div class="example">* 연출된 이미지입니다.</div>
+
+            <div class="more-products">
+                <a href="H-product.html#all-products" class="browse-button">☜  모든 제품 보러가기</a>
+                <a href="H-estimate.html" class="browse-button">견적문의 하러가기  ☞</a>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+    <script>
+    fetch("C-footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+      });
+    </script>
+    
+    <a id="backtotop"></a>
+    <script src="js/main.js"></script>
+</body>
+</html>
