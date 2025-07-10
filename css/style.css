@@ -1156,7 +1156,7 @@ html {
   .estimate-form {
     width: 100%;
     max-width: 600px;
-    margin: 120px auto 60px auto; /* auto로 중앙정렬 */
+    margin: 150px auto 60px auto; /* auto로 중앙정렬 */
     padding: 24px;
     box-sizing: border-box;
   }
@@ -1250,7 +1250,8 @@ html {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 1.5rem;
-    white-space: normal;
+    font-size: 1.3rem;
+    white-space: nowrap;
     text-shadow: 0 2px 5px rgba(0,0,0,0.5);
   }
 
