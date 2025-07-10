@@ -1153,10 +1153,6 @@ html {
     width: 90%;
   }
 
-  #recent-products {
-    display: none;
-  }
-
   .estimate-form {
     width: 100%;
     max-width: 600px;
@@ -1308,9 +1304,28 @@ html {
 
   }
 
-  #map-page .map-and-image {
+  #map-page .map-and-image,
+  #map-page .map-info {
     flex-direction: column;
     height: auto; /* 고정 높이 제거 */
+    align-items: center; /* 중앙 정렬 */
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #map-page .store1-image {
+    height: 300px;
+    margin-top: 60px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   #map-page .map-container,
@@ -1336,7 +1351,7 @@ html {
     font-weight: bold;
     color: #42425d;
     margin-bottom: 0.5rem;
-    margin-top: 0.5px;
+    margin-top: 3rem;
 }
 
 .footer-info {
@@ -1365,6 +1380,5 @@ html {
     line-height: 30px;
     color: #273e6b;
 }
-
 
 }
