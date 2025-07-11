@@ -33,21 +33,21 @@ function transformNext(event) {
     const cardWidth = 320;
     const visibleWidth = classList.clientWidth;
     const totalCardWidth = liList.length * cardWidth;
-    const maxTranslateX = visibleWidth - totalCardWidth; // 음수 (최대로 밀 수 있는 위치)
+    const maxTranslateX = visibleWidth - totalCardWidth; 
 
     if (activeLi > maxTranslateX) {
         let nextPosition = activeLi - cardWidth;
 
         if (nextPosition < maxTranslateX) {
-            nextPosition = maxTranslateX; // 넘치지 않게 제한
+            nextPosition = maxTranslateX; 
         }
 
-        // PREV 활성화
+       
         slidePrev.style.color = '#2f3059';
         slidePrev.classList.add('slide-prev-hover');
         slidePrev.addEventListener('click', transformPrev);
 
-        // NEXT 비활성화 조건
+       
         if (nextPosition === maxTranslateX) {
             slideNext.style.color = '#cfd8dc';
             slideNext.classList.remove('slide-next-hover');
@@ -75,12 +75,10 @@ function transformPrev(event) {
             nextPosition = 0;
         }
 
-        // NEXT 활성화
         slideNext.style.color = '#2f3059';
         slideNext.classList.add('slide-next-hover');
         slideNext.addEventListener('click', transformNext);
 
-        // PREV 비활성화 조건
         if (nextPosition === 0) {
             slidePrev.style.color = '#cfd8dc';
             slidePrev.classList.remove('slide-prev-hover');
@@ -105,22 +103,22 @@ for (let i = 0; i < slidePrevList.length; i++) {
     const visibleWidth = classList.clientWidth;
 
     if (totalCardWidth > visibleWidth) {
-        // NEXT 활성화
+       
         slideNext.style.color = '#2f3059';
         slideNext.classList.add('slide-next-hover');
         slideNext.addEventListener('click', transformNext);
 
-        // PREV 비활성화 (시작 상태)
+        
         slidePrevList[i].style.color = '#cfd8dc';
         slidePrevList[i].classList.remove('slide-prev-hover');
         slidePrevList[i].removeEventListener('click', transformPrev);
 
-        // 초기 위치
+        
         classList.setAttribute('data-position', '0');
         classList.style.transition = 'none';
         classList.style.transform = 'translateX(0px)';
     } else {
-        // 카드가 넘치지 않으면 버튼 제거
+        
         const arrowContainer = slidePrevList[i].parentElement;
         arrowContainer.removeChild(slidePrevList[i].nextElementSibling);
         arrowContainer.removeChild(slidePrevList[i]);
@@ -136,15 +134,15 @@ window.addEventListener("scroll", () => {
   clearTimeout(timeoutId);
 
   if (window.scrollY === 0) {
-    // 맨 위에서는 헤더 무조건 보이게
+   
     header.classList.remove("hide");
-    return;  // 아래 숨기기 타이머 실행하지 않음
+    return;  
   }
 
-  // 맨 위가 아니면 헤더 보이기
+ 
   header.classList.remove("hide");
 
-  //  숨기기
+  
   timeoutId = setTimeout(() => {
     header.classList.add("hide");
   }, 300);
@@ -158,7 +156,7 @@ header.addEventListener("mouseenter", () => {
 header.addEventListener("mouseleave", () => {
   clearTimeout(timeoutId);
   timeoutId = setTimeout(() => {
-    // 스크롤이 맨 위일 때는 숨기지 않도록 조건 추가
+    
     if (window.scrollY !== 0) {
       header.classList.add("hide");
     }
@@ -196,31 +194,31 @@ if (form && statusMessage) {
 
 /* ---------------------------------------------------------------*/
 
-// 최근 본 제품 저장
+
 function saveRecentProduct(name, url, imageUrl) {
   let recent = JSON.parse(sessionStorage.getItem('recentProducts')) || [];
 
-  // 동일 제품 중복 제거
+  
   recent = recent.filter(p => p.name !== name);
 
-  // 새 제품 맨 앞에 추가
+  
   recent.unshift({ name, url, imageUrl });
 
-  // 최대 5개까지 저장
+  
   if (recent.length > 5) recent = recent.slice(0, 5);
 
   sessionStorage.setItem('recentProducts', JSON.stringify(recent));
 
-  // 박스 보이게 하기
+  
   const box = document.getElementById('recent-products');
   const toggleBtn = document.getElementById('recent-toggle');
   if (box) box.style.display = '';
   if (toggleBtn) toggleBtn.style.display = '';
 
-  // 최근 제품 목록 새로고침
+  
   showRecentProducts();
 
-  // 접힘 상태 적용 (토글버튼과 동일하게)
+  
   const isCollapsed = localStorage.getItem('recentCollapsed') === 'true';
   if (isCollapsed && box) {
     box.classList.add('collapsed');
@@ -229,7 +227,7 @@ function saveRecentProduct(name, url, imageUrl) {
   }
 }
 
-// 최근 본 제품 목록 표시
+
 function showRecentProducts() {
   const list = document.getElementById('recent-list');
   if (!list) return;
@@ -256,7 +254,7 @@ function showRecentProducts() {
   });
 }
 
-// recent.html 불러온 후 실행
+
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.createElement('div');
   container.id = 'recent-container';
@@ -272,17 +270,17 @@ document.addEventListener('DOMContentLoaded', () => {
       const recent = JSON.parse(sessionStorage.getItem('recentProducts')) || [];
 
       if (recent.length === 0) {
-        // 최근 제품 없으면 박스와 토글 버튼 숨기기
+       
         if (box) box.style.display = 'none';
         if (toggleBtn) toggleBtn.style.display = 'none';
       } else {
-        // 제품 있으면 보이기 + 목록 표시
+        
         if (box) box.style.display = '';
         if (toggleBtn) toggleBtn.style.display = '';
 
         showRecentProducts();
 
-        // 저장된 접힘 상태 확인
+        
         const isCollapsed = localStorage.getItem('recentCollapsed') === 'true';
         if (isCollapsed) {
           box.classList.add('collapsed');
@@ -292,12 +290,12 @@ document.addEventListener('DOMContentLoaded', () => {
           toggleBtn.textContent = '＞';
         }
 
-        // 버튼 클릭 시 상태 저장
+        
         toggleBtn.addEventListener('click', () => {
           box.classList.toggle('collapsed');
           const collapsed = box.classList.contains('collapsed');
           toggleBtn.textContent = collapsed ? '＜' : '＞';
-          localStorage.setItem('recentCollapsed', collapsed); // 상태 저장
+          localStorage.setItem('recentCollapsed', collapsed); 
         });
       }
     });
@@ -305,7 +303,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// 헤더를 불러온 후에 햄버거 이벤트 등록
 fetch("C-header.html")
   .then(res => res.text())
   .then(data => {

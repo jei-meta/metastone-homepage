@@ -98,7 +98,7 @@ section {
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: 1300px; /* 여기서 제한 */
+  max-width: 1300px; 
   height: 100%;
   object-fit: cover;
   z-index: 1;
@@ -110,8 +110,7 @@ section {
   max-width: 1300px;
   margin: 0 auto;
   height: 100%;
-  background-color: rgba(26, 41, 71, 0.5); /* 반투명 오버레이 */
-  z-index: 2;
+  background-color: rgba(26, 41, 71, 0.5); 
 }
 
 .title-container {
@@ -148,7 +147,7 @@ section {
 .hero-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 비율 유지하며 꽉 채움 */
+  object-fit: cover; 
   display: block;
 }
 
@@ -156,12 +155,12 @@ section {
   position: absolute;
   top: 40%;
   left: 50%;
-  transform: translate(-50%, -50%); /* 가운데 정렬 */
+  transform: translate(-50%, -50%); 
   color: white;
   font-size: 2.5rem;
   font-style: oblique;
   font-weight: bold;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* 어두운 배경일 때 가독성↑ */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); 
   z-index: 2;
   white-space: nowrap;
 }
@@ -268,7 +267,6 @@ section {
   padding: 0 20px;
 }
 
-/* 짝수 번째(2, 4, 6...)는 순서 반대 */
 .info-container:nth-child(even) {
   flex-direction: row-reverse;
 }
@@ -284,13 +282,12 @@ section {
   box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
-/* 텍스트 스타일 */
 .info-text {
-  text-align: left; /* 기본 정렬: 왼쪽 */
+  text-align: left; 
 }
 
 .info-container:nth-child(even) .info-text {
-  text-align: right; /* 짝수 번째는 오른쪽 정렬 */
+  text-align: right; 
 }
 
 .info-text h2 {
@@ -386,8 +383,8 @@ section {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%; /* 이미지 너비에 맞게 꽉 차게 */
-    max-width: 1350px; /* 부모 .introduce 최대 너비와 맞추기 */
+    width: 100%; 
+    max-width: 1350px; 
     height: auto;
 }
 
@@ -443,18 +440,18 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);  /* 어두운 반투명 띠 */
+  background: rgba(0, 0, 0, 0.6);  
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* 텍스트 수직 정렬 */
-  align-items: center;     /* 텍스트 수평 정렬 */
+  justify-content: center; 
+  align-items: center;     
   padding: 20px;
   box-sizing: border-box;
   text-align: center;
 }
 
-/* 텍스트 스타일 */
+
 .value-title {
   font-size: 1rem;
   font-weight: bold;
@@ -579,7 +576,7 @@ section {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #FFD700; /* 노란색 */
+  background-color: #FFD700; 
   color: rgb(20, 34, 158);
   font-weight: bold;
   font-size: 10px;
@@ -593,7 +590,7 @@ section {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
-/* 반짝임 애니메이션 */
+
 @keyframes sparkle {
   0%, 100% {
     transform: scale(1) rotate(0deg);
@@ -612,7 +609,7 @@ section {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #FFD700; /* 노란색 */
+  background-color: #FFD700; 
   color: rgb(20, 34, 158);
   font-weight: bold;
   font-size: 10px;
@@ -672,17 +669,15 @@ body.form-page {
   background-size: cover;
 }
 
-/* 기본 폼 스타일 */
 .estimate-form {
   max-width: 600px;
-  margin: 150px auto 80px auto;           /* 위아래 여백 추가 */
-  padding: 40px 40px 10px 40px;               /* 폼 내부 여백 */
+  margin: 150px auto 80px auto;           
+  padding: 40px 40px 10px 40px;               
   border: 1px solid #ccc;
   border-radius: 12px;
   background-color: #f9f9f9;
 }
 
-/* 제목 */
 .estimate-form h2 {
   text-align: center;
   margin-bottom: 30px;
@@ -694,14 +689,12 @@ body.form-page {
   margin-left: 4px;
 }
 
-/* 라벨과 입력 필드 사이 간격 */
 .estimate-form label {
   display: block;
   margin-top: 20px;
   font-weight: bold;
 }
 
-/* 입력 필드 스타일 */
 .estimate-form input,
 .estimate-form textarea {
   width: 100%;
@@ -713,7 +706,6 @@ body.form-page {
   box-sizing: border-box;
 }
 
-/* 설명 텍스트 (hint) */
 .estimate-form .hint {
   margin-top: 5px;
   margin-bottom: 30px;
@@ -721,14 +713,12 @@ body.form-page {
   color: #666;
 }
 
-/* 버튼 그룹 */
 .estimate-form .button-group {
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
 }
 
-/* 버튼 스타일 */
 .estimate-form button,
 .estimate-form a.kakao-btn {
   padding: 12px 20px;
@@ -750,7 +740,6 @@ body.form-page {
   text-align: center;
 }
 
-/* 전송 상태 메시지 */
 .status-message {
   margin-top: 20px;
   font-weight: bold;
@@ -765,7 +754,6 @@ body.form-page {
   color: red;
 }
 
-/* 긴급문의 */
 .emergency-contact {
     margin-top: 3rem;
     text-align: left;
@@ -783,7 +771,6 @@ body.form-page {
     text-decoration: underline;
 }
 
-
 #map-page .wrapper {
     margin: 0 auto;
     max-width: 1200px;
@@ -794,7 +781,6 @@ body.form-page {
     height: 600px;
     margin: 0 1rem 1rem 1rem;
 }
-
 
 #map-page .map-container iframe {
     width: 100%;
@@ -830,15 +816,14 @@ body.form-page {
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
     padding: 1.5rem;
     display: flex;
-    flex-direction: row;              /* 가로 정렬로 변경 */
-    justify-content: center;   /* 좌우로 배치 */
+    flex-direction: row;              
+    justify-content: center;   
     align-items: center;
     text-align: left;
     line-height: 1.6;
     box-sizing: border-box;
 }
 
-/* 왼쪽 제목 */
 #map-page .map-title h2 {
     font-size: 1.1rem;
     margin: 0;
@@ -847,7 +832,6 @@ body.form-page {
     padding-right: 5rem;
 }
 
-/* 오른쪽 주소 */
 #map-page .map-address address {
     font-size: 1rem;
     font-style: normal;
@@ -929,7 +913,7 @@ html {
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px; /* 헤더 높이 */
+  height: 80px; 
   background-color: white;
   color: black;
   opacity: 1;
@@ -940,7 +924,7 @@ html {
 
 #main-header.hide {
   opacity: 0;
-  pointer-events: auto; /* 여전히 마우스 감지 가능하게 유지 */
+  pointer-events: auto; 
 }
 
 #main-header.scrolled {
@@ -949,10 +933,9 @@ html {
 }
 
 #all-products, #best-products {
-  scroll-margin-top: 100px; /* 헤더 높이만큼 조절 */
+  scroll-margin-top: 100px; 
 }
 
-/* 최근 본 제품 전체 박스 */
 #recent-products {
   position: fixed;
   top: 50%;
@@ -968,17 +951,15 @@ html {
   transition: right 0.3s ease;
 }
 
-/* 최근 본 제품 숨긴 상태 */
 #recent-products.collapsed {
-  right: -90px; /* 박스는 오른쪽 밖으로 빠짐 */
+  right: -90px; 
 }
 
-/* 토글 버튼 */
 #recent-toggle {
   position: absolute;
-  top: 50%; /* 박스 세로 중앙 */
-  left: -15px; /* 박스 왼쪽 바깥 */
-  transform: translateY(-50%); /* 정확한 중앙 정렬 */
+  top: 50%; 
+  left: -15px; 
+  transform: translateY(-50%); 
   width: 24px;
   height: 24px;
   background: white;
@@ -990,7 +971,6 @@ html {
   z-index: 10;
 }
 
-/* 최근 본 제품 항목 */
 .recent-item {
   display: flex;
   flex-direction: column;
@@ -1001,7 +981,6 @@ html {
   font-size: 12px;
 }
 
-/* 썸네일 이미지 */
 .recent-thumb {
   width: 60px;
   height: 60px;
@@ -1011,20 +990,17 @@ html {
   margin-bottom: 4px;
 }
 
-/* 이름 텍스트 */
 .recent-item span {
   text-align: center;
   line-height: 1.2;
 }
 
-/* 제목 */
 #recent-products h4 {
   font-size: 14px;
   margin: 0 0 10px 0;
   text-align: center;
 }
 
-/* 햄버거 메뉴 버튼 (모바일 전용) */
 .hamburger {
   display: none;
   font-size: 2rem;
@@ -1060,8 +1036,6 @@ html {
         max-width: 1200px;
     }
 }
-
-/* 반응형 대응 */
 
 @media (max-width: 768px) {
 
@@ -1119,7 +1093,7 @@ html {
 
   .main-image {
     height: 300px;
-    aspect-ratio: unset; /* 기존 비율 제거 */
+    aspect-ratio: unset; 
   }
 
   .main-image img {
@@ -1144,7 +1118,7 @@ html {
   .product-grid-carara img,
   .product-grid-calacatta img {
     width: 80%;
-    aspect-ratio: 4 / 3;  /* 원하는 비율로 조절 */
+    aspect-ratio: 4 / 3;  
     height: auto;
     object-fit: cover;
   }
@@ -1161,7 +1135,7 @@ html {
   .estimate-form {
     width: 100%;
     max-width: 600px;
-    margin: 150px auto 60px auto; /* auto로 중앙정렬 */
+    margin: 150px auto 60px auto; 
     padding: 24px;
     box-sizing: border-box;
   }
@@ -1209,7 +1183,7 @@ html {
     top: 0;
     left: 0;
     width: 100%;
-    height: 300px;  /* 100% 대신 고정 높이 주기 */
+    height: 300px;  
     background-color: rgba(26, 41, 71, 0.4);
     z-index: 2;
 
@@ -1295,7 +1269,7 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.3); /* 더 뚜렷한 반투명 배경 */
+    background: rgba(255, 255, 255, 0.3); 
     z-index: 1;
   }
 
@@ -1322,8 +1296,8 @@ html {
   #map-page .map-and-image,
   #map-page .map-info {
     flex-direction: column;
-    height: auto; /* 고정 높이 제거 */
-    align-items: center; /* 중앙 정렬 */
+    height: auto; 
+    align-items: center; 
     margin-left: 0;
     margin-right: 0;
     padding-left: 0;
@@ -1351,9 +1325,8 @@ html {
 
   #map-page .side-image {
     object-fit: cover;
-    aspect-ratio: 3 / 2; /* 원래 비율대로 유지되도록 */
+    aspect-ratio: 3 / 2; 
   }
-
 
 .footer-inner {
     border-top: 1px solid #e4e4e4;
