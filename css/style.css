@@ -111,6 +111,7 @@ section {
   margin: 0 auto;
   height: 100%;
   background-color: rgba(26, 41, 71, 0.5); 
+  z-index: 2;
 }
 
 .title-container {
