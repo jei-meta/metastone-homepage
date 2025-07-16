@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
   container.id = 'recent-container';
   document.body.appendChild(container);
 
-  fetch('/C-recent.html')
+  fetch('../C-recent.html')
     .then(res => res.text())
     .then(html => {
       container.innerHTML = html;
