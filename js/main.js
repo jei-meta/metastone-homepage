@@ -318,22 +318,22 @@ fetch("/C-header.html")
     }
   });
 
-/* ===== (모바일 전용) 드래그 + 스냅: 안정 초기화 버전 (버그픽스) ===== */
+/* ===== (모바일 전용) 드래그 + 스냅: 안정 초기화 버전 ===== */
 (function () {
   const MOBILE_QUERY = '(max-width: 767px)';
   const CARD_WIDTH = 320;
 
   function bindMobileDrag(wrap) {
-    // 안전 가드: 올바른 엘리먼트만 받기
+    
     if (!wrap || !(wrap instanceof HTMLElement)) return;
 
-    // 요소 찾기
+    
     const prevEl = wrap.querySelector('.slide-prev');
     const nextEl = wrap.querySelector('.slide-next');
     const track  = wrap.querySelector('.class-list');
     if (!track) return;
 
-    // 중복 바인딩 방지(트랙에 표시)
+    
     if (track.dataset.dragBound === '1') return;
     track.dataset.dragBound = '1';
 
@@ -344,7 +344,7 @@ fetch("/C-header.html")
       const count   = track.querySelectorAll('li').length;
       const total   = count * CARD_WIDTH;
       const visible = track.clientWidth;
-      return Math.min(0, visible - total); // 0 ~ 음수
+      return Math.min(0, visible - total); 
     };
 
     function setPos(x, withAnim) {
@@ -382,7 +382,7 @@ fetch("/C-header.html")
     let maxX = getMaxX();
     updateArrows(Number(track.getAttribute('data-position')) || 0, maxX);
 
-    // 드래그 상태
+    
     let dragging = false, moved = false;
     let startX = 0, startPos = Number(track.getAttribute('data-position')) || 0;
     const getX = (e) => e.clientX ?? e.touches?.[0]?.clientX ?? 0;
@@ -435,7 +435,7 @@ fetch("/C-header.html")
 
     track.addEventListener('click', (e) => { if (moved) e.preventDefault(); });
 
-    // 리사이즈 보정
+    
     let t;
     window.addEventListener('resize', () => {
       clearTimeout(t);
@@ -454,16 +454,16 @@ fetch("/C-header.html")
     if (!window.matchMedia(MOBILE_QUERY).matches) return;
     const wraps = document.querySelectorAll('.best-container');
     if (!wraps.length) return;
-    // 레이아웃 안정 후 바인딩
+    
     requestAnimationFrame(() =>
       requestAnimationFrame(() => wraps.forEach(bindMobileDrag))
     );
   }
 
-  // DOM 준비 상태별로 시도
+  
   if (document.readyState === 'complete' || document.readyState === 'interactive') {
     tryInitAll();
-    setTimeout(tryInitAll, 150); // 늦게 렌더되는 경우 한 번 더
+    setTimeout(tryInitAll, 150); 
   } else {
     document.addEventListener('DOMContentLoaded', () => {
       tryInitAll();
@@ -471,17 +471,17 @@ fetch("/C-header.html")
     });
   }
 
-  // 이미지까지 로드된 뒤에도 안전망
+  
   window.addEventListener('load', () => {
     tryInitAll();
     setTimeout(tryInitAll, 0);
   }, { once: true });
 
-  // 동적 삽입 대비
+  
   const mo = new MutationObserver(tryInitAll);
   mo.observe(document.documentElement, { childList: true, subtree: true });
 
-  // 데스크톱 ↔ 모바일 전환
+  
   const mql = window.matchMedia(MOBILE_QUERY);
   const onChange = () => { if (mql.matches) tryInitAll(); }
   mql.addEventListener ? mql.addEventListener('change', onChange) : mql.addListener(onChange);
