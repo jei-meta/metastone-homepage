@@ -317,3 +317,172 @@ fetch("/C-header.html")
       });
     }
   });
+
+/* ===== (모바일 전용) 드래그 + 스냅: 안정 초기화 버전 (버그픽스) ===== */
+(function () {
+  const MOBILE_QUERY = '(max-width: 767px)';
+  const CARD_WIDTH = 320;
+
+  function bindMobileDrag(wrap) {
+    // 안전 가드: 올바른 엘리먼트만 받기
+    if (!wrap || !(wrap instanceof HTMLElement)) return;
+
+    // 요소 찾기
+    const prevEl = wrap.querySelector('.slide-prev');
+    const nextEl = wrap.querySelector('.slide-next');
+    const track  = wrap.querySelector('.class-list');
+    if (!track) return;
+
+    // 중복 바인딩 방지(트랙에 표시)
+    if (track.dataset.dragBound === '1') return;
+    track.dataset.dragBound = '1';
+
+    track.style.touchAction = 'pan-y';
+    track.style.cursor = 'grab';
+
+    const getMaxX = () => {
+      const count   = track.querySelectorAll('li').length;
+      const total   = count * CARD_WIDTH;
+      const visible = track.clientWidth;
+      return Math.min(0, visible - total); // 0 ~ 음수
+    };
+
+    function setPos(x, withAnim) {
+      track.style.transition = withAnim ? 'transform .35s' : 'none';
+      track.style.transform  = `translateX(${x}px)`;
+      track.setAttribute('data-position', String(x));
+    }
+
+    function updateArrows(pos, maxX) {
+      if (nextEl) {
+        if (pos === maxX) {
+          nextEl.style.color = '#cfd8dc';
+          nextEl.classList.remove('slide-next-hover');
+          nextEl.removeEventListener('click', transformNext);
+        } else {
+          nextEl.style.color = '#2f3059';
+          nextEl.classList.add('slide-next-hover');
+          nextEl.addEventListener('click', transformNext);
+        }
+      }
+      if (prevEl) {
+        if (pos === 0) {
+          prevEl.style.color = '#cfd8dc';
+          prevEl.classList.remove('slide-prev-hover');
+          prevEl.removeEventListener('click', transformPrev);
+        } else {
+          prevEl.style.color = '#2f3059';
+          prevEl.classList.add('slide-prev-hover');
+          prevEl.addEventListener('click', transformPrev);
+        }
+      }
+    }
+
+    if (!track.getAttribute('data-position')) setPos(0, false);
+    let maxX = getMaxX();
+    updateArrows(Number(track.getAttribute('data-position')) || 0, maxX);
+
+    // 드래그 상태
+    let dragging = false, moved = false;
+    let startX = 0, startPos = Number(track.getAttribute('data-position')) || 0;
+    const getX = (e) => e.clientX ?? e.touches?.[0]?.clientX ?? 0;
+
+    const onDown = (e) => {
+      dragging = true; moved = false;
+      startX = getX(e);
+      startPos = Number(track.getAttribute('data-position')) || 0;
+      track.style.cursor = 'grabbing';
+      track.style.transition = 'none';
+      e.preventDefault();
+    };
+    const onMove = (e) => {
+      if (!dragging) return;
+      const dx = getX(e) - startX;
+      if (Math.abs(dx) > 3) moved = true;
+      let next = startPos + dx;
+      const limit = getMaxX();
+      if (next > 0) next = 0;
+      if (next < limit) next = limit;
+      setPos(next, false);
+    };
+    const onUp = () => {
+      if (!dragging) return;
+      dragging = false;
+      track.style.cursor = 'grab';
+      maxX = getMaxX();
+      let cur = Number(track.getAttribute('data-position')) || 0;
+      let snapped = Math.round(cur / CARD_WIDTH) * CARD_WIDTH;
+      if (snapped > 0) snapped = 0;
+      if (snapped < maxX) snapped = maxX;
+      setPos(snapped, true);
+      updateArrows(snapped, maxX);
+    };
+
+    if ('PointerEvent' in window) {
+      track.addEventListener('pointerdown', onDown, { passive: false });
+      window.addEventListener('pointermove', onMove, { passive: false });
+      window.addEventListener('pointerup', onUp, { passive: true });
+      window.addEventListener('pointercancel', onUp, { passive: true });
+    } else {
+      track.addEventListener('mousedown', onDown, { passive: false });
+      window.addEventListener('mousemove', onMove, { passive: false });
+      window.addEventListener('mouseup', onUp, { passive: true });
+      track.addEventListener('touchstart', onDown, { passive: false });
+      window.addEventListener('touchmove', onMove, { passive: false });
+      window.addEventListener('touchend', onUp, { passive: true });
+      window.addEventListener('touchcancel', onUp, { passive: true });
+    }
+
+    track.addEventListener('click', (e) => { if (moved) e.preventDefault(); });
+
+    // 리사이즈 보정
+    let t;
+    window.addEventListener('resize', () => {
+      clearTimeout(t);
+      t = setTimeout(() => {
+        const limit = getMaxX();
+        let pos = Number(track.getAttribute('data-position')) || 0;
+        if (pos < limit) pos = limit;
+        if (pos > 0) pos = 0;
+        setPos(pos, true);
+        updateArrows(pos, limit);
+      }, 120);
+    });
+  }
+
+  function tryInitAll() {
+    if (!window.matchMedia(MOBILE_QUERY).matches) return;
+    const wraps = document.querySelectorAll('.best-container');
+    if (!wraps.length) return;
+    // 레이아웃 안정 후 바인딩
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => wraps.forEach(bindMobileDrag))
+    );
+  }
+
+  // DOM 준비 상태별로 시도
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    tryInitAll();
+    setTimeout(tryInitAll, 150); // 늦게 렌더되는 경우 한 번 더
+  } else {
+    document.addEventListener('DOMContentLoaded', () => {
+      tryInitAll();
+      setTimeout(tryInitAll, 150);
+    });
+  }
+
+  // 이미지까지 로드된 뒤에도 안전망
+  window.addEventListener('load', () => {
+    tryInitAll();
+    setTimeout(tryInitAll, 0);
+  }, { once: true });
+
+  // 동적 삽입 대비
+  const mo = new MutationObserver(tryInitAll);
+  mo.observe(document.documentElement, { childList: true, subtree: true });
+
+  // 데스크톱 ↔ 모바일 전환
+  const mql = window.matchMedia(MOBILE_QUERY);
+  const onChange = () => { if (mql.matches) tryInitAll(); }
+  mql.addEventListener ? mql.addEventListener('change', onChange) : mql.addListener(onChange);
+})();

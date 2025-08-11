@@ -1393,4 +1393,8 @@ html {
     color: #273e6b;
 }
 
+.best-title-container .arrow-container {
+   display: none; 
+}
+
 }
