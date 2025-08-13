@@ -1020,7 +1020,7 @@ html {
   display: flex;
   align-items: center;
   gap: 30px; 
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 
@@ -1095,8 +1095,8 @@ html {
 }
 
 @media (max-width: 768px) {
-  .footer { padding: 30px; }
-  .footer-inner { align-items: flex-start; gap: 20px; }
+  .footer { padding: 30px 10px; }
+  .footer-inner { align-items: flex-start; gap: 0px; flex-wrap: nowrap; }
   .footer-logo img { max-height: 50px; }
   .icon { width: 32px; height: 32px; }
   .social-btn { width: 48px; height: 48px; }
