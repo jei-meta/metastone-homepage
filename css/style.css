@@ -746,10 +746,29 @@ body.form-page {
     max-width: 1200px;
 }
 
+.store-section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.store1-image, .samplebook-images img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .store1-image {
-    width: 100%;
-    height: 600px;
-    margin: 0 1rem 1rem 1rem;
+  margin-bottom: 20px; 
+}
+
+.samplebook-images {
+  display: flex;
+  gap: 20px;             
+  align-items: center;  
+}
+
+.samplebook-images img {
+  width: calc(50% - 10px);
 }
 
 #map-page .map-container iframe {
@@ -763,7 +782,7 @@ body.form-page {
     align-items: center;
     gap: 1rem;
     width: 100%;
-    margin: 2rem 1rem 2rem 1rem;
+    margin: 2rem 0;
     height: 400px;
 }
 
@@ -781,7 +800,7 @@ body.form-page {
 
 #map-page .map-info {
     width: 100%;
-    margin: 0 1rem 2rem 1rem;
+    margin: 1rem 0 ;
     background-color: #fff9e65e;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
     padding: 1.5rem;
@@ -1356,6 +1375,14 @@ html {
 
 .product-description h1 {
   font-size: 1rem;
+}
+
+.samplebook-images {
+  flex-direction: column;
+  gap: 15px;
+}
+.samplebook-images img {
+  width: 100%;
 }
 
   #map-page .map-and-image,
