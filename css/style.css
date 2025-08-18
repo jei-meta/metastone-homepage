@@ -691,12 +691,12 @@ body.form-page {
 
 .estimate-form .button-group {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 30px;
 }
 
 .estimate-form button,
-.estimate-form a.kakao-btn {
+.estimate-form {
   padding: 12px 20px;
   font-size: 16px;
   border: none;
@@ -708,12 +708,6 @@ body.form-page {
 .estimate-form button.email-btn {
   background-color: #4CAF50;
   color: white;
-}
-
-.estimate-form a.kakao-btn {
-  background-color: #ffe812;
-  color: #3b1e1e;
-  text-align: center;
 }
 
 .status-message {
@@ -1225,13 +1219,8 @@ html {
     font-size: 15px;
   }
 
-  .estimate-form .button-group {
-    flex-direction: column;
-    gap: 10px;
-  }
-
   .estimate-form button,
-  .estimate-form a.kakao-btn {
+  .estimate-form {
     width: 100%;
     text-align: center;
   }
