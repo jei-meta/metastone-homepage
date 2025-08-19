@@ -1310,6 +1310,10 @@ html {
     object-fit: cover;
   }
 
+  .product-stack {
+    margin-top: 80px;
+  }
+
   .interior-images {
     flex-direction: column;
     align-items: center;
