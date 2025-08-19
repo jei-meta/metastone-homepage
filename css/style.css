@@ -834,17 +834,112 @@ body.form-page {
   padding: 40px 10px;
 }
 
-.product-main-image img {
+.product-stack {
+  max-width: 1200px;  
+  margin: 0 auto;
+}
+
+.image-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;    
+  margin: 0 auto 28px;    
+  text-align: center;     
+}
+
+.image-block img {
   width: 100%;
   height: auto;
   display: block;
-  margin-top: 100px;
-  margin-bottom: 80px;
 }
+
+.image-block figcaption {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #666;
+}
+
+.image-block.big  { max-width: 1200px; } 
+.image-block.sub1 { max-width: 800px;  } 
+.image-block.sub2 { max-width: 400px;  }
+
+/* 확대 트리거 표시 */
+.zoomable { cursor: zoom-in; }
+
+/* 라이트박스 레이어 */
+.lightbox {
+  position: fixed; inset: 0;
+  display: none;             /* 기본 숨김 */
+  align-items: center; justify-content: center;
+  z-index: 9999;
+}
+.lightbox.open { display: flex; }
+
+.lightbox__backdrop {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+/* 내부 컨테이너 */
+.lightbox__inner {
+  position: relative;
+  max-width: 95vw; max-height: 95vh;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ✅ 고정 프레임(틀) — 넘침 숨김 */
+.lightbox__viewport {
+  position: relative;
+  width: 95vw; max-width: 1200px;
+  height: 90vh; max-height: 900px;
+  overflow: hidden;
+  background: #000;                 /* 모서리 비는 것 방지용 */
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* 드래그/줌 대상 이미지 */
+.lightbox__img {
+  user-select: none; -webkit-user-drag: none;
+  touch-action: none;               /* 모바일 제스처 충돌 방지 */
+  transform: translate(var(--tx, 0px), var(--ty, 0px)) scale(var(--scale, 1));
+  transform-origin: center center;
+  cursor: default;                  /* scale>1일 때 JS가 grab/grabbing으로 변경 */
+  max-width: none; max-height: none;/* fit 계산으로 표시 */
+}
+
+/* 컨트롤(하단 중앙) */
+.lightbox__controls {
+  position: absolute; bottom: 16px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; gap: 8px;
+}
+.lb-btn {
+  border: 0; padding: 8px 12px; border-radius: 8px;
+  background: rgba(255,255,255,0.9); color: #111;
+  font-size: 16px; cursor: pointer;
+}
+.lb-btn:hover { background: #fff; }
+
+.lb-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+
+  display: flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px;
+  border: 0; padding: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.9);
+  font-size: 18px; line-height: 1;
+  cursor: pointer;
+}
+.lb-close:hover { background: #fff; }
 
 .product-description {
   text-align: center;
-  margin-bottom: 100px;
+  margin: 100px 0;
 }
 
 .product-description p {
@@ -1099,6 +1194,9 @@ html {
 .insta:hover .insta-path { fill: url(#insta-gradient); }
 .naver:hover .naver-bg { fill: #03C75A; }
 
+@media (pointer: coarse) {
+  .lightbox__controls { display: none !important; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .social-btn { transition: none; }

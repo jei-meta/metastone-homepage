@@ -41,8 +41,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <main class="product-detail">
 
-        <section class="product-main-image">
-            <img src="../img/c/night-sheet.png" alt="다크나이트 원장 이미지" />
+        <section class="product-stack">
+            <figure class="image-block big">
+                <img src="../img/c/night-sheet.png" alt="다크나이트 원장 이미지" />
+                <figcaption>원장이미지 3000 * 1600 mm</figcaption>
+            </figure>
+
+            <figure class="image-block sub1">
+                <img class="zoomable" src="../img/c/night-sub1.jpg" alt="다크나이트 서브 이미지1">
+                <figcaption>디테일컷 (클릭시 확대)</figcaption>
+            </figure>
+
+            <figure class="image-block sub2">
+                <img src="../img/c/night-sub2.jpg" alt="다크나이트 서브 이미지2">
+                <figcaption>샘플이미지 100 * 100 mm</figcaption>
+            </figure>
         </section>
 
         <section class="product-description">
@@ -64,6 +77,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </section>
     </main>
+
+<div class="lightbox" aria-hidden="true">
+  <div class="lightbox__backdrop"></div>
+
+  <div class="lightbox__inner" role="dialog" aria-modal="true">
+    <div class="lightbox__viewport">
+      <img class="lightbox__img" alt="">
+      <button type="button" class="lb-btn lb-close" aria-label="닫기">&times;</button>
+    </div>
+
+    <div class="lightbox__controls">
+      <button type="button" class="lb-btn lb-zoom-in" aria-label="확대">＋</button>
+      <button type="button" class="lb-btn lb-zoom-out" aria-label="축소">－</button>
+    </div>
+  </div>
+</div>
 
     <div id="footer"></div>
     <script>

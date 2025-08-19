@@ -44,8 +44,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="store-section">
           <img src="../img/store1.png" alt="매장내부1" class="store1-image">
           <div class="samplebook-images">
-            <img src="../img/samplebook1.jpg" alt="샘플북1" class="samplebook">
-            <img src="../img/samplebook2.jpg" alt="샘플북2" class="samplebook">
+            <img class="zoomable" src="../img/samplebook1.jpg" alt="샘플북1" class="samplebook">
+            <img class="zoomable" src="../img/samplebook2.jpg" alt="샘플북2" class="samplebook">
           </div>
 
         </div>
@@ -72,6 +72,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
       </div>
     </section>
+
+<div class="lightbox" aria-hidden="true">
+  <div class="lightbox__backdrop"></div>
+
+  <div class="lightbox__inner" role="dialog" aria-modal="true">
+    <div class="lightbox__viewport">
+      <img class="lightbox__img" alt="">
+      <button type="button" class="lb-btn lb-close" aria-label="닫기">&times;</button>
+    </div>
+
+    <div class="lightbox__controls">
+      <button type="button" class="lb-btn lb-zoom-in" aria-label="확대">＋</button>
+      <button type="button" class="lb-btn lb-zoom-out" aria-label="축소">－</button>
+    </div>
+  </div>
+</div>
 
     <div id="footer"></div>
     <script>
