@@ -342,7 +342,7 @@ section {
 
 .introduce {
     max-width: 1350px;
-    margin: 60px auto 0 auto;
+    margin: 60px auto 0;
     position: relative;
 }
 
@@ -352,6 +352,7 @@ section {
     display: block;
     margin-top: 100px;
     border-radius: 4px;
+    object-fit: cover;
 }
 
 .introduce-text-wrapper {
@@ -361,84 +362,295 @@ section {
     transform: translate(-50%, -50%);
     width: 100%; 
     max-width: 1350px; 
-    height: auto;
 }
 
 .introduce-text-bg {
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(255, 255, 255, 0.7);
+    inset: 0;
+    background: rgba(255, 255, 255, 0.6);
     z-index: 1;
+    pointer-events: none;
 }
 
 .introduce-text {
     position: relative;
     z-index: 2;
-    width: 1000px;
+    width: 1100px;
     margin: 0 auto;
     padding: 20px;
     color: #000000;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 1.4;
+    text-align: center;
 }
 
-.company-sections {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin: 70px auto;
-  max-width: 1350px;
+.company-intro {
+  max-width: 800px;         
+  margin: 80px auto;        
+  text-align: center;     
+  padding: 0 20px;          
+  color: #333;             
 }
 
-.company-section {
-  flex: 1 1 30%;
-  box-sizing: border-box;
+.company-intro p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 24px;
 }
 
-.image-wrapper {
-  position: relative;
+.company-intro strong {
+  font-weight: 600;
+  color: #111; 
+}
+
+.ms-table--props{
+  table-layout: fixed;
+  border-radius: 10px;
   overflow: hidden;
-  border-radius: 4px;
+}
+.ms-table--props thead th{
+  white-space:nowrap;
+}
+.ms-table--props .col-feature{ width:18%; }
+.ms-table--props .col-type{ width:27%; }
+
+.ms-table--props tbody th[scope="row"]{
+  text-align:center;
+  background:#fafbfc;
+  font-weight:700;
 }
 
-.company-section img {
-  width: 100%;
-  height: 250px;
-  display: block;
-  border-radius: 4px;
+.ms-sub{ display:block; font-size:12px; color:var(--muted); margin-top:2px; }
+
+.ms-composition{
+  --bg:#ffffff;
+  --ink:#1d1f24;
+  --muted:#6b7280;
+  --line:#e6e8eb;
+  --accent:#feeb8a;           
+  --accent-ink:#202020;
+  --radius:14px;
+  --shadow:0 6px 24px rgba(17,24,39,.06);
+  background:var(--bg);
+  color:var(--ink);
+  margin: 40px 0;
+}
+.ms-table-wrap{
+  margin:0 auto;
+  padding:20px 16px 8px;
+  max-width:980px;
+  background:linear-gradient(180deg,#fff, #fafafa);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+.ms-table-wrap > figcaption {
+  font-size:20px;
+  font-weight:700;
+  letter-spacing:.01em;
+  margin:4px 6px 14px;
+}
+.ms-table-caption{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:12px;
+}
+.ms-table-caption .ms-source{
+  font-size:13px;
+  font-weight:400;
+  color:var(--muted);
+  margin:0;
+  white-space:nowrap;
+}
+.ms-table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  border-radius:6px;
+  overflow:hidden;
+}
+.ms-table thead th{
+  background:#0f172a;             
+  color:#fff;
+  text-align:center;
+  padding:14px 12px;
+  font-weight:700;
+  border-right:1px solid rgba(255,255,255,.12);
+}
+.ms-table thead th:last-child{border-right:none;}
+.ms-table tbody th,
+.ms-table tbody td{
+  padding:14px 12px;
+  border-bottom:1px solid var(--line);
+  border-right:1px solid var(--line);
+  border-left:1px solid var(--line);
+  vertical-align:middle;
+  text-align:center;
+}
+.ms-table tbody th{ text-align:center; font-weight:700; }
+.ms-table tbody tr:nth-child(even):not(.is-primary){ background:#fcfcfd; }
+
+
+.ms-table tbody tr.is-primary th,
+.ms-table tbody tr.is-primary td{
+  background:var(--accent);
+  color:var(--accent-ink);
+  border-color:#f1d200;
+}
+
+.ms-table tbody tr.stress th,
+.ms-table tbody tr.stress td{
+  color: red;
+}
+
+.ms-table .col-remark{ width:28%; }
+.ms-table .remark{ font-size:14px; color:var(--muted); line-height:1.6; }
+
+
+.ms-note{
+  margin:12px 6px 8px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+.ms-gallery{
+  display:grid;
+  grid-template-columns:1fr; 
+  gap:12px;
+  max-width:760px;       
+  margin:40px auto;  
+}
+
+.ms-gallery figure{
+  margin:30px 0;
+  border:1px solid var(--line);
+  border-radius: 3px;
+  overflow:visible;
+  background:#fff;
+  box-shadow:var(--shadow);
+  position: relative;
+}
+
+.ms-gallery img{
+  display:block;
+  width:100%;
+  height:auto;        
+  object-fit:contain;
+  transition: transform .22s ease;
+  transform-origin: center top;      /* ↑ 위쪽 기준으로 커져서 캡션과 안겹침 */
+  will-change: transform;
+  margin-top: 20px;
+}
+
+.ms-gallery figcaption{
+  padding:8px 10px;
+  font-size:15px;
+  color:var(--muted);
+  text-align:center;
 }
 
 
-.value-box {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);  
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; 
-  align-items: center;     
-  padding: 20px;
-  box-sizing: border-box;
-  text-align: center;
+/* 반응형(모바일: 카드형) */
+@media (max-width: 760px){
+  .ms-table thead , .hide-on-mobile { display:none; }
+  .ms-table, .ms-table tbody, .ms-table tr, .ms-table td, .ms-table th{ display:block; width:100%; }
+  .ms-table tbody tr{ 
+    background:#fff; 
+    border:1px solid var(--line);
+    border-radius:12px;
+    margin:12px 0;
+    overflow:hidden;
+    box-shadow:0 2px 10px rgba(0,0,0,.04);
+  }
+  .ms-table tbody th[scope="row"]{
+    background:#0f172a; color:#fff; 
+    padding:14px 16px; border:none;
+  }
+  .ms-table tbody tr.is-primary th[scope="row"]{
+    background:var(--accent); color:var(--accent-ink);
+  }
+  .ms-table tbody td{
+    display:flex; justify-content:space-between; gap:16px;
+    border:none; border-top:1px dashed var(--line);
+    padding:12px 16px;
+    text-align:right;
+    font-weight:600;
+  }
+  .ms-table tbody td::before{
+    content: attr(data-label);
+    color:var(--muted);
+    font-weight:500;
+    text-align:left;
+  }
+  .ms-table .remark{ border-top:1px dashed var(--line); text-align:left; }
+}
+
+@media (max-width: 480px){
+  .ms-table-caption{ flex-wrap:wrap; }
+  .ms-table-caption .ms-source{ white-space:normal; }
 }
 
 
-.value-title {
-  font-size: 1rem;
-  font-weight: bold;
-  margin-bottom: 4px;
+/* 커스텀 변수로 속도/높이/간격 조절 */
+.ms-marquee{
+  --h: 350px;
+  --w: 700px;          /* 이미지 높이 */
+  --gap: 10px;         /* 이미지 간격 */
+  --speed: 40s;        /* 한 바퀴 도는 시간(느리게=크게) */
+
+  background:#fff;
+  border-top:1px solid #e6e8eb;
+  padding:30px 0 0 0;      /* 띠 여백 */
 }
 
-.value-desc {
-  font-size: 0.95rem;
-  line-height: 1.4;
-  max-width: 80%;
+/* 뷰포트: 양 끝 페이드(선택) + 스크롤 숨김 */
+.ms-marquee__viewport{
+  overflow:hidden;
+  position:relative;
+  /* 양 끝 페이드 효과(선택 사항) */
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
 }
+
+/* 트랙: 가변폭 + 수평 플렉스 + 무한 애니메이션 */
+.ms-marquee__track{
+  display:flex;
+  gap: var(--gap);
+  width: max-content;
+  will-change: transform;
+  animation: ms-scroll var(--speed) linear infinite;
+}
+
+/* 항목(이미지 카드) */
+.ms-marquee__item{
+  flex: 0 0 auto;
+  border:1px solid #e6e8eb;
+  border-radius:2px;
+  overflow:hidden;
+  background:#fff;
+  box-shadow: 0 6px 24px rgba(17,24,39,.06);
+}
+
+.ms-marquee__item img{
+  display:block;
+  height: var(--h);
+  width: var(--w);           /* 가로 비율 유지 */
+  object-fit: cover;     /* 필요 시 contain으로 변경 */
+  transform: translateZ(0);
+}
+
+/* 핵심: 두 번 이어붙인 트랙을 절반(-50%)만큼 이동 → 완전 무한루프 */
+@keyframes ms-scroll{
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* 모션 최소화 선호 시 애니메이션 끄기 */
+@media (prefers-reduced-motion: reduce){
+  .ms-marquee__track{ animation: none; }
+}
+
 
 .product-main {
     margin-top: 90px;
@@ -864,13 +1076,11 @@ body.form-page {
 .image-block.sub1 { max-width: 800px;  } 
 .image-block.sub2 { max-width: 400px;  }
 
-/* 확대 트리거 표시 */
 .zoomable { cursor: zoom-in; }
 
-/* 라이트박스 레이어 */
 .lightbox {
   position: fixed; inset: 0;
-  display: none;             /* 기본 숨김 */
+  display: none;             
   align-items: center; justify-content: center;
   z-index: 9999;
 }
@@ -881,34 +1091,32 @@ body.form-page {
   background: rgba(0,0,0,0.6);
 }
 
-/* 내부 컨테이너 */
 .lightbox__inner {
   position: relative;
   max-width: 95vw; max-height: 95vh;
   display: flex; align-items: center; justify-content: center;
 }
 
-/* ✅ 고정 프레임(틀) — 넘침 숨김 */
 .lightbox__viewport {
   position: relative;
   width: 95vw; max-width: 1200px;
   height: 90vh; max-height: 900px;
   overflow: hidden;
-  background: #000;                 /* 모서리 비는 것 방지용 */
+  background: #000;                 
   display: flex; align-items: center; justify-content: center;
 }
 
-/* 드래그/줌 대상 이미지 */
+
 .lightbox__img {
   user-select: none; -webkit-user-drag: none;
-  touch-action: none;               /* 모바일 제스처 충돌 방지 */
+  touch-action: none;               
   transform: translate(var(--tx, 0px), var(--ty, 0px)) scale(var(--scale, 1));
   transform-origin: center center;
-  cursor: default;                  /* scale>1일 때 JS가 grab/grabbing으로 변경 */
-  max-width: none; max-height: none;/* fit 계산으로 표시 */
+  cursor: default;                  
+  max-width: none; max-height: none;
 }
 
-/* 컨트롤(하단 중앙) */
+
 .lightbox__controls {
   position: absolute; bottom: 16px; left: 50%;
   transform: translateX(-50%);
