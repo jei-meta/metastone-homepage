@@ -618,6 +618,7 @@ section {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 2rem;
+  padding-bottom : 50px;
 }
 
 .product-item {
