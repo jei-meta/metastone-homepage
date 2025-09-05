@@ -398,7 +398,7 @@ section {
 }
 
 .ms-gallery{
-  display:grid;
+  display:none;
   grid-template-columns:1fr; 
   gap:12px;
   max-width:760px;       
