@@ -88,10 +88,10 @@ section {
 }
 
 .main {
-    margin-top: 90px;
+    margin-top: 120px;
     margin-bottom: 100px;
     position: relative;
-    height: 600px;
+    height: 700px;
     overflow: hidden;
 }
 
@@ -111,19 +111,19 @@ section {
   position: relative;
   width: 100%;
   max-width: 1300px;
-  margin: 0 auto;
+  margin:  0 auto;
   height: 100%;
   background-color: rgba(26, 41, 71, 0.5); 
   z-index: 2;
 }
 
 .title-container {
-    padding-top: 120px;
+    padding-top: 150px;
 }
 
 .title {
     text-align: center;
-    font-size: clamp(24px, 6vw, 80px);
+    font-size: clamp(18px, 4.5vw, 60px);
     font-weight: bold;
     color: #fff;
     margin-bottom: 2rem;
@@ -189,13 +189,13 @@ section {
 }
 
 #backtotop {
-    background-color: #273e6b;
+    background-color: #777c85;
     width: 40px;
     height: 40px;
     text-align: center;
 
     border-radius: 20px;
-    border: solid 2px #273e6b;
+    border: solid 2px #777c85;
     position: fixed;
     bottom: 30px;
     right: 30px;
@@ -211,12 +211,12 @@ section {
     font-family: FontAwesome;
     font-size: 1.3rem;
     line-height: 35px;
-    color: #273e6b;
+    color: #777c85;
 }
 
 #backtotop.show:hover {
     cursor: pointer;
-    background-color: #ecf5ff;
+    background-color: #777c85;
 }
 
 #backtotop.show {
