@@ -941,7 +941,7 @@ body.form-page {
 }
 
 .image-block.big  { max-width: 1200px; margin-top: 70px;} 
-.image-block.sub1 { max-width: 800px;  } 
+.image-block.sub1 { max-width: 900px;  } 
 .image-block.sub2 { max-width: 400px;  }
 
 .zoomable { cursor: zoom-in; }
