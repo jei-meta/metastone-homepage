@@ -76,7 +76,7 @@ header {
 .head-menu {
     display: flex;
     align-items: center;
-    gap: 100px;
+    gap: 80px;
     font-weight: 400;
     font-size: 1.5rem;
 }
@@ -1592,5 +1592,178 @@ html {
 .best-title-container .arrow-container {
    display: none; 
 }
+
+}
+
+
+/* =========================
+   시공사례 공통 레이아웃
+   ========================= */
+
+.case-page,
+.case-view {
+  padding: 90px 0;
+}
+
+.case-container {
+  width: min(1400px, 94%);
+  margin: 0 auto;
+}
+
+/* 공통 제목 기본 (크기 없음) */
+.case-title {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* =========================
+   시공사례 목록 페이지
+   ========================= */
+
+.case-list-title {
+  margin: 70px 0 10px 0px;
+  font-size: 24px;
+}
+
+.case-desc {
+  margin: 0 0 50px;
+  color: #666;
+  font-size: 18px;
+}
+
+/* 썸네일 그리드 */
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+
+.case-item {
+  position: relative;          
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.case-item img {
+  width: 100%;
+  aspect-ratio: 5 / 4;         
+  object-fit: cover;
+  display: block;
+  border-radius: 5px;
+}
+
+/* 제목: 이미지 위에 오버레이 */
+.case-item-title {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+
+  padding: 6px 12px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+
+  color: #fff;
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.25)
+  );
+  border-radius: 999px;
+}
+
+
+/* hover 효과 */
+@media (hover:hover) and (pointer:fine) {
+  .case-item img {
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .case-item:hover img {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.10);
+  }
+}
+
+/* =========================
+   시공사례 상세 페이지
+   ========================= */
+
+.case-view-title {
+  margin: 48px 0 6px;   /* 위 여백 */
+  font-size: 24px;
+}
+
+.case-subtitle {
+  margin: 0 0 36px;
+  font-size: 18px;
+  color: #666;
+}
+
+/* 목록으로 버튼 */
+.case-back {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 28px;
+  padding: 10px 18px;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+}
+
+.case-back:hover {
+  text-decoration: underline;
+}
+
+/* 상세 이미지 나열 */
+.case-gallery {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-bottom: 40px;
+}
+
+.case-photo {
+  margin: 0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.case-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px;
+}
+
+
+
+/* 반응형 */
+@media (max-width: 1300px) {
+  .case-grid { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 1000px) {
+  .case-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 700px) {
+  .case-grid { grid-template-columns: repeat(2, 1fr); }
+  .case-list-title { font-size: 18px; }
+  .case-desc { font-size: 13px; }
+  .case-item-title { font-size: 13px; }
+
+  .case-view-title { font-size: 18px; margin-top: 32px; }
+  .case-subtitle { font-size: 13px; margin-bottom: 28px; }
+
+  .case-back { font-size: 13px; padding: 8px 14px; }
+}
+@media (max-width: 420px) {
+  .case-grid { grid-template-columns: 1fr; }
+  .case-page,
+  .case-view { padding: 70px 0; }
 
 }
